@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="55dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/income_bar"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:text="Income"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_toLeftOf="@id/expense_bar"
+            android:layout_marginEnd="40dp"/>
+
+        <TextView
+            android:id="@+id/total_income_text_view"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:textSize="15sp"
+            android:textColor="@color/green"
+            android:gravity="center"
+            android:layout_toLeftOf="@id/expense_bar"
+            android:layout_marginEnd="40dp"
+            android:layout_below="@id/income_bar"/>
+
+        <TextView
+            android:id="@+id/expense_bar"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:text="Expense"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/total_expense_text_view"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:textSize="15sp"
+            android:textColor="@color/colorAccent"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/expense_bar"/>
+
+        <TextView
+            android:id="@+id/balance_bar"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:text="Balance"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_toRightOf="@id/expense_bar"
+            android:layout_marginStart="40dp"/>
+
+        <TextView
+            android:id="@+id/total_balance_text_view"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:textSize="15sp"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_toRightOf="@id/expense_bar"
+            android:layout_below="@id/balance_bar"
+            android:layout_marginStart="40dp"/>
+    </RelativeLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="45dp">
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/total_tab"
+            android:background="@android:color/white"
+            app:tabTextAppearance="@style/TabLayoutStyle"
+            app:tabMinWidth="100dp"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabIndicatorColor="@color/colorPrimary">
+
+        </com.google.android.material.tabs.TabLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/total_viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

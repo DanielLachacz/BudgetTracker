@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">BudgetTracker</string>
+    <string name="add_income_or_expense"><b>Add Income or Expense</b></string>
+    <string name="menu"><b>Menu</b></string>
+    <string name="expense"><b>Expense</b></string>
+    <string name="income"><b>Income</b></string>
+
+
+    <string name="total">
+        <font size="19">Total</font> </string>
+    <string name="day">
+    <font size="19">Day</font> </string>
+    <string name="week">
+    <font size="19">Week</font> </string>
+    <string name="month">
+    <font size="19">Month</font> </string>
+
+
+</resources>
