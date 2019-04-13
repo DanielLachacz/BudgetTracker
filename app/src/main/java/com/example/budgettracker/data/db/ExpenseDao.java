@@ -18,7 +18,10 @@ public interface ExpenseDao {
     void insertExpense(Expense expense);
 
     @Query("SELECT * FROM expense_table WHERE day = strftime('%d', 'now')")
-    LiveData<List<Expense>> getExpensesByDay();
+    LiveData<List<Expense>> getExpensesDay();
+
+    @Query("SELECT * FROM expense_table WHERE month = strftime('%m', 'now')")
+    LiveData<List<Expense>> getExpensesMonth();
 
     @Query("SELECT * FROM expense_table")
     LiveData<List<Expense>> getAllExpenses();
@@ -26,10 +29,9 @@ public interface ExpenseDao {
     @Query("SELECT COALESCE(sum(COALESCE(value,0)), 0) FROM expense_table WHERE day = strftime('%d', 'now')")
     LiveData<Double> getTotalValueDay();
 
+    @Query("SELECT COALESCE(sum(COALESCE(value,0)), 0) FROM expense_table WHERE month = strftime('%m', 'now')")
+    LiveData<Double> getTotalValueMonth();
+
     @Query("SELECT COALESCE(sum(COALESCE(value,0)), 0) FROM expense_table")
     LiveData<Double> getTotalValue();
-
-    @Query("SELECT SUM(value) FROM expense_table WHERE type = :type")
-    LiveData<List<Double>> getTotalType(String type);
-
 }

@@ -58,7 +58,6 @@ public class DayFragment extends Fragment {
                         floatingActionButton.hide();
                     }
                 }
-
             }
 
             @Override
@@ -112,7 +111,6 @@ public class DayFragment extends Fragment {
                 }
             }
         });
-
 
         return v;
     }

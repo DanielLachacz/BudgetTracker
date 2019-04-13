@@ -9,10 +9,12 @@ import android.view.ViewGroup;
 import com.example.budgettracker.R;
 import com.example.budgettracker.viewmodel.TotalStatsViewModel;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,34 +61,6 @@ public class TotalStatsFragment extends Fragment {
 
         pieChart = v.findViewById(R.id.total_pie_chart);
 
-        PieChart pieChart2 = v.findViewById(R.id.total_expense_pie_chart);
-        pieChart2.setEntryLabelTextSize(16f);
-        //pieChart2.setUsePercentValues(true);
-        pieChart2.setCenterText("Expenses");
-        pieChart2.setCenterTextSize(23f);
-
-        ArrayList<PieEntry> entries2 = new ArrayList<>();
-
-        PieDataSet pieDataSet2 = new PieDataSet(entries2, "");
-        pieDataSet2.setColors(getResources().getColor(R.color.colorAccent), getResources().getColor(R.color.green));
-        pieDataSet2.setValueTextSize(20f);
-        pieDataSet2.setFormSize(20f);
-
-        pieDataSet2.setValueTextColor(getResources().getColor(R.color.white));
-
-        PieData data2 = new PieData(pieDataSet2);
-        pieChart2.invalidate();
-
-        Legend legend2 = pieChart2.getLegend();
-        legend2.setTextSize(14f);
-
-        totalStatsViewModel.getTotalType().observe(getViewLifecycleOwner(), new Observer<List<Double>>() {
-            @Override
-            public void onChanged(List<Double> doubles) {
-                Log.d("TSF ", String.valueOf(doubles.get(0).toString()));
-            }
-        });
-
         return v;
     }
 
@@ -100,6 +74,8 @@ public class TotalStatsFragment extends Fragment {
             pieChart.setUsePercentValues(true);
             pieChart.setCenterText("Balance");
             pieChart.setCenterTextSize(23f);
+            Description x = null;
+            pieChart.setDescription(x);
 
             ArrayList<PieEntry> entries = new ArrayList<>();
 
@@ -107,10 +83,10 @@ public class TotalStatsFragment extends Fragment {
             pieDataSet.setColors(getResources().getColor(R.color.colorAccent), getResources().getColor(R.color.green));
             pieDataSet.setValueTextSize(20f);
             pieDataSet.setFormSize(20f);
-
             pieDataSet.setValueTextColor(getResources().getColor(R.color.white));
 
             data = new PieData(pieDataSet);
+            data.setValueFormatter(new PercentFormatter(pieChart));
 
             legend = pieChart.getLegend();
             legend.setTextSize(14f);

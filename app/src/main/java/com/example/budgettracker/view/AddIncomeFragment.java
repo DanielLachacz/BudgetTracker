@@ -1,11 +1,7 @@
 package com.example.budgettracker.view;
 
 import android.app.Activity;
-import android.app.DatePickerDialog;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.inputmethodservice.KeyboardView;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.text.SpannableStringBuilder;
@@ -20,7 +16,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.budgettracker.R;
@@ -28,15 +23,11 @@ import com.example.budgettracker.data.model.Income;
 import com.example.budgettracker.viewmodel.AddIncomeViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.Calendar;
-import java.util.Objects;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import static androidx.core.content.ContextCompat.getSystemService;
 
 public class AddIncomeFragment extends Fragment {
 

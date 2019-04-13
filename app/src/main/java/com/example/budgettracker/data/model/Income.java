@@ -21,8 +21,7 @@ public class Income {
     private Long dateLong = System.currentTimeMillis();
     private String date = new SimpleDateFormat("MM/yyyy").format(new Date(dateLong));
     private static Calendar cal = Calendar.getInstance();
-    private int month = cal.get(Calendar.MONTH);
-    private int week = cal.get(Calendar.WEEK_OF_YEAR);
+    private int month = cal.get(Calendar.MONTH) + 1;
     private int day = cal.get(Calendar.DAY_OF_MONTH);
     private int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
     private String weekDay = new DateFormatSymbols().getWeekdays()[dayOfWeek];
@@ -95,14 +94,6 @@ public class Income {
 
     public void setMonth(int month) {
         this.month = month;
-    }
-
-    public int getWeek() {
-        return week;
-    }
-
-    public void setWeek(int week) {
-        this.week = week;
     }
 
     public int getDay() {

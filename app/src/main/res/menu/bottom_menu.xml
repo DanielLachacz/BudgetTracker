@@ -7,11 +7,7 @@
         android:title="@string/day"/>
 
     <item
-        android:id="@+id/weekly_nav"
-        android:title="@string/week" />
-
-    <item
-        android:id="@+id/monthly_nav"
+        android:id="@+id/month_nav"
         android:title="@string/month"/>
 
     <item

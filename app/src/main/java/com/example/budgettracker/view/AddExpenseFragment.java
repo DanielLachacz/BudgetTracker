@@ -6,17 +6,13 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.text.SpannableStringBuilder;
 import android.text.style.RelativeSizeSpan;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
@@ -34,15 +30,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import static androidx.core.content.ContextCompat.getSystemService;
-
 public class AddExpenseFragment extends Fragment {
 
     private AddExpenseViewModel addExpenseViewModel;
     private EditText valueEditText, noteEditText;
     private ImageButton backButton;
     private String type;
-    private String[] expenses = {"Bills", "Car", "Child", "Clothes", "Entertainment", "Education", "Electronics",
+    private String[] expenses = {"Bills", "Child", "Clothes", "Entertainment", "Education", "Electronics",
             "Food", "Health", "Home", "Pet", "Shopping", "Transport", "Travel", "Others"};
 
     @Nullable
@@ -135,7 +129,6 @@ public class AddExpenseFragment extends Fragment {
 
         Expense expense = new Expense(value, note, type);
         addExpenseViewModel.insertExpense(expense);
-        Log.d("AEF ", String.valueOf(expense + " / " + expense.getDay() + " / " + expense.getValue() + " / " + expense.getExpenseId()));
 
         String text = "Expense saved";
         SpannableStringBuilder biggerText = new SpannableStringBuilder(text);

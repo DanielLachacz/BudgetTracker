@@ -5,11 +5,6 @@ import android.app.Application;
 import com.example.budgettracker.data.ExpenseRepository;
 import com.example.budgettracker.data.IncomeRepository;
 import com.example.budgettracker.data.SharedRepository;
-import com.example.budgettracker.data.model.Expense;
-import com.example.budgettracker.data.model.Income;
-
-
-import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;

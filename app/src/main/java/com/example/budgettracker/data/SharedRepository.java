@@ -14,6 +14,7 @@ public class SharedRepository {
 
     private SharedDao sharedDao;
     private LiveData<Double> totalBalanceDay;
+    private LiveData<Double> totalBalanceMonth;
     private LiveData<Double> totalBalance;
 
     public SharedRepository(Application application) {
@@ -21,6 +22,7 @@ public class SharedRepository {
         sharedDao = database.sharedDao();
         totalBalance = sharedDao.getTotalBalance();
         totalBalanceDay = sharedDao.getTotalBalanceDay();
+        totalBalanceMonth = sharedDao.getTotalBalanceMonth();
     }
 
     public void deleteAllData() {
@@ -30,6 +32,10 @@ public class SharedRepository {
 
     public LiveData<Double> getTotalBalanceDay() {
         return totalBalanceDay;
+    }
+
+    public LiveData<Double> getTotalBalanceMonth() {
+        return totalBalanceMonth;
     }
 
     public LiveData<Double> getTotalBalance() {

@@ -9,7 +9,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Expense.class, Income.class}, version = 9)
+@Database(entities = {Expense.class, Income.class}, version = 10)
 public abstract class ExpenseIncomeDatabase extends RoomDatabase {
 
     private static ExpenseIncomeDatabase instance;

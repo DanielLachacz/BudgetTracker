@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 9,
-    "identityHash": "acbc9e91db823396ff56daf223e79aa4",
+    "identityHash": "6be42f54b19799bcfe74731daa86da5b",
     "entities": [
       {
         "tableName": "expense_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`expenseId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `note` TEXT, `value` REAL, `type` TEXT, `dateLong` INTEGER, `date` TEXT, `month` INTEGER NOT NULL, `week` INTEGER NOT NULL, `day` INTEGER NOT NULL, `dayOfWeek` INTEGER NOT NULL, `weekDay` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`expenseId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `note` TEXT, `value` REAL, `type` TEXT, `dateLong` INTEGER, `date` TEXT, `month` INTEGER NOT NULL, `day` INTEGER NOT NULL, `dayOfWeek` INTEGER NOT NULL, `weekDay` TEXT)",
         "fields": [
           {
             "fieldPath": "expenseId",
@@ -51,12 +51,6 @@
             "notNull": true
           },
           {
-            "fieldPath": "week",
-            "columnName": "week",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
             "fieldPath": "day",
             "columnName": "day",
             "affinity": "INTEGER",
@@ -86,7 +80,7 @@
       },
       {
         "tableName": "income_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`incomeId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `note` TEXT, `value` REAL, `type` TEXT, `dateLong` INTEGER, `date` TEXT, `month` INTEGER NOT NULL, `week` INTEGER NOT NULL, `day` INTEGER NOT NULL, `dayOfWeek` INTEGER NOT NULL, `weekDay` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`incomeId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `note` TEXT, `value` REAL, `type` TEXT, `dateLong` INTEGER, `date` TEXT, `month` INTEGER NOT NULL, `day` INTEGER NOT NULL, `dayOfWeek` INTEGER NOT NULL, `weekDay` TEXT)",
         "fields": [
           {
             "fieldPath": "incomeId",
@@ -131,12 +125,6 @@
             "notNull": true
           },
           {
-            "fieldPath": "week",
-            "columnName": "week",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
             "fieldPath": "day",
             "columnName": "day",
             "affinity": "INTEGER",
@@ -168,7 +156,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"acbc9e91db823396ff56daf223e79aa4\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"6be42f54b19799bcfe74731daa86da5b\")"
     ]
   }
 }

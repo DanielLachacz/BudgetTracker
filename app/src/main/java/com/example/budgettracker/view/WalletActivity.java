@@ -1,6 +1,5 @@
 package com.example.budgettracker.view;
 
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,6 +48,10 @@ public class WalletActivity extends AppCompatActivity {
                     switch (menuItem.getItemId()) {
                         case R.id.day_nav:
                             selectedFragment = new DayFragment();
+                            break;
+
+                        case R.id.month_nav:
+                            selectedFragment = new MonthFragment();
                             break;
 
                         case R.id.total_nav:

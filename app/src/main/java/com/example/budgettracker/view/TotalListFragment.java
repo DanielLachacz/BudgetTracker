@@ -1,12 +1,9 @@
 package com.example.budgettracker.view;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 
 import com.example.budgettracker.R;
 import com.example.budgettracker.adapter.DailyAdapter;
@@ -17,7 +14,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class TotalListFragment extends Fragment {
 
+    private FloatingActionButton floatingActionButton;
 
     @Nullable
     @Override
@@ -36,6 +33,8 @@ public class TotalListFragment extends Fragment {
         View v = inflater.inflate(R.layout.total_list_fragment, container, false);
 
         TotalListViewModel totalListViewModel = ViewModelProviders.of(this).get(TotalListViewModel.class);
+
+        floatingActionButton = ((WalletActivity) getActivity()).getFabButton();
 
         List<Expense> mExpenses = new ArrayList<>();
         List<Income> mIncomes = new ArrayList<>();
@@ -64,11 +63,11 @@ public class TotalListFragment extends Fragment {
         return v;
     }
 
-    private void closeKeyboard(Context mContext) {
-        InputMethodManager imm = (InputMethodManager) mContext
-                .getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(Objects.requireNonNull(((Activity) mContext).getWindow()
-                .getCurrentFocus()).getWindowToken(), 0);
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (floatingActionButton != null) {
+            floatingActionButton.show();
+        }
     }
-
 }

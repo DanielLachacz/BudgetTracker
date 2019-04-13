@@ -15,16 +15,20 @@ public class IncomeRepository {
 
     private IncomeDao incomeDao;
     private LiveData<List<Income>> allIncomes;
-    private LiveData<List<Income>> allIncomesLastDay;
+    private LiveData<List<Income>> allIncomesDay;
+    private LiveData<List<Income>> allIncomesMonth;
     private LiveData<Double> totalValueDay;
+    private LiveData<Double> totalValueMonth;
     private LiveData<Double> totalValue;
 
     public IncomeRepository(Application application) {
         ExpenseIncomeDatabase database = ExpenseIncomeDatabase.getInstance(application);
         incomeDao = database.incomeDao();
         allIncomes = incomeDao.getAllIncomes();
-        allIncomesLastDay = incomeDao.getIncomesByDay();
+        allIncomesDay = incomeDao.getIncomesDay();
+        allIncomesMonth = incomeDao.getIncomesMonth();
         totalValueDay = incomeDao.getTotalValueDay();
+        totalValueMonth = incomeDao.getTotalValueMonth();
         totalValue = incomeDao.getTotalValue();
     }
 
@@ -32,8 +36,12 @@ public class IncomeRepository {
         new InsertIncomeAsyncTask(incomeDao).execute(income);
     }
 
-    public LiveData<List<Income>> getAllIncomesLastDay() {
-        return allIncomesLastDay;
+    public LiveData<List<Income>> getAllIncomesDay() {
+        return allIncomesDay;
+    }
+
+    public LiveData<List<Income>> getAllIncomesMonth() {
+        return allIncomesMonth;
     }
 
     public LiveData<List<Income>> getAllIncomes() {
@@ -42,6 +50,10 @@ public class IncomeRepository {
 
     public LiveData<Double> getTotalValueDay() {
         return totalValueDay;
+    }
+
+    public LiveData<Double> getTotalValueMonth() {
+        return totalValueMonth;
     }
 
     public LiveData<Double> getTotalValue() {

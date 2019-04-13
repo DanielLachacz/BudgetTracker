@@ -15,24 +15,22 @@ import androidx.lifecycle.LiveData;
 
 public class DayListViewModel extends AndroidViewModel {
 
-    private ExpenseRepository expenseRepository;
-    private IncomeRepository incomeRepository;
-    private LiveData<List<Expense>> allExpenses;
-    private LiveData<List<Income>> allIncomes;
+    private LiveData<List<Expense>> allExpensesDay;
+    private LiveData<List<Income>> allIncomesDay;
 
     public DayListViewModel(@NonNull Application application) {
         super(application);
-        expenseRepository = new ExpenseRepository(application);
-        incomeRepository = new IncomeRepository(application);
-        allExpenses = expenseRepository.getAllExpensesLastDay();
-        allIncomes = incomeRepository.getAllIncomesLastDay();
+        ExpenseRepository expenseRepository = new ExpenseRepository(application);
+        IncomeRepository incomeRepository = new IncomeRepository(application);
+        allExpensesDay = expenseRepository.getAllExpensesDay();
+        allIncomesDay = incomeRepository.getAllIncomesDay();
     }
 
-    public LiveData<List<Expense>> getAllExpensesLastDay() {
-        return allExpenses;
+    public LiveData<List<Expense>> getAllExpensesDay() {
+        return allExpensesDay;
     }
 
-    public LiveData<List<Income>> getAllIncomesLastDay() {
-        return allIncomes;
+    public LiveData<List<Income>> getAllIncomesDay() {
+        return allIncomesDay;
     }
 }
