@@ -7,4 +7,13 @@
     <color name="lightGrey">#E0DFDF</color>
     <color name="white">#FAF7F7</color>
     <color name="yellow">#FFD600</color>
+    <color name="orange">#FF5900</color>
+    <color name="pink">#FF00B7</color>
+    <color name="purple">#9D00FF</color>
+    <color name="black">#050505</color>
+    <color name="azure">#00EAFF</color>
+    <color name="mint">#00FF90</color>
+    <color name="lightBlue">#00B7FF</color>
+    <color name="grey">#838584</color>
+    <color name="brown">#553D26</color>
 </resources>

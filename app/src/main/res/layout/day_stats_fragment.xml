@@ -7,10 +7,37 @@
     android:layout_marginTop="90dp"
     android:layout_marginBottom="55dp">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
             <com.github.mikephil.charting.charts.PieChart
                 android:id="@+id/day_pie_chart"
                 android:layout_width="match_parent"
                 android:layout_height="480dp"
                 android:layout_gravity="center"/>
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/day_expense_pie_chart"
+                android:layout_width="match_parent"
+                android:layout_height="480dp"
+                android:layout_below="@id/day_pie_chart"
+                android:layout_marginTop="10dp"/>
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/day_income_pie_chart"
+                android:layout_width="match_parent"
+                android:layout_height="480dp"
+                android:layout_below="@id/day_expense_pie_chart"
+                android:layout_marginBottom="55dp"
+                android:layout_marginTop="10dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
